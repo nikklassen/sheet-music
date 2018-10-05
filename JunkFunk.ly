@@ -20,15 +20,13 @@
   right-margin = 1.29\cm
 }
 
-\layout {
-  \context { \Score
-    autoBeaming = ##f
-  }
-}
-
-\midi{}
-
 \score {    
+  \layout {
+    \context { \Score
+      autoBeaming = ##f
+    }
+  }
+
   \relative c'' {
     \clef "treble" \key f \major \time 6/8 | % 1
     c4 -"" \mf ^\markup{ \bold {Funky shuffle(J.=ll6)} } c8 c8 ( [ a8 ) a8
