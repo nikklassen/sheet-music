@@ -3,7 +3,7 @@
 \header {
   title = "Junk Funk Shuffle (for Drums, Trash Cans, Buckets and Band)"
   composer = "KEVIN MIXON"
-  poet = "Trumpet 3 in B♭­"
+  poet = \markup { "Trumpet 3 in ­" \char ##x266D }
   }
 
 #(set-global-staff-size 18.3084948425)
@@ -26,7 +26,6 @@
   \new Voice {
     \compressFullBarRests
     \override MultiMeasureRest.expand-limit = #2
-    % \override Score.BarNumber.stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
     \set Score.markFormatter = #format-mark-box-numbers
 
   \relative c'' {
