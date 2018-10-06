@@ -25,7 +25,7 @@
 
   \new Voice {
     \compressFullBarRests
-    \override MultiMeasureRest.expand-limit = #2
+    \override MultiMeasureRest.expand-limit = #1
     \set Score.markFormatter = #format-mark-box-numbers
 
   \relative c'' {
@@ -68,7 +68,7 @@
     a4 \! \f a8 a8 ( [ f8 ) f8 ~ ] | % 29
     f4. es4 es8 | \barNumberCheck #45
     d4 f8 d4 es8~ | % 31
-    ees4. [ g8 g bes ] | % 32
+    es4. g8 [ g bes ] | % 32
     a4 a8 es4 es8 | % 33
     f4 f8 as4 c8 | % 34
     g8~ [ g8 d8~ ] d4. |
@@ -127,41 +127,48 @@
     bes2._"Ah!" \sfz \< |
     \mark #100
     <f bes>4._"Hey!" \ff \! r4. |
+    \dynamicDown
     R2. * 7 |
     R2. * 2 ^\markup { \italic "molto rit." } |
     r4. bes8_"Sh!" \ff r8 r8 \fermata |
     \xNotesOff
     \mark #111
+    \override Score.MetronomeMark.font-size = #-2
     \tempo "Funky shuffle (Tempo primo)" 4. = 116
+    \once \override MultiMeasureRest.minimum-length = #45
     R2. * 11 |
     r4. bes8 \mf \< [ bes8 g8 ] |
     \mark #123
-    a4^"Bring it home!" \f \! a8 a8 ( [ f8 ) f8 ~ ] | \barNumberCheck #124
+    a4^\markup { \bold "Bring it home!" } \f \! a8 a8 ( [ f8 ) f8 ~ ] | \barNumberCheck #124
     f4. es4 es8 | % 31
     d4 f8 d4 es8~ | % 32
     es4. g8 [ g8 bes8 ] | % 33
     a4 a8 es4 es8 | % 34
     f4 f8 as4 c8 | % 35
-    g16 [ g8 ] d8 ~ d4. | % 36
+    g8 [ g8 d8 ] ~ d4. | % 36
     b'4. \rest g4 bes8 | % 37
     a4 a8 a8 ( [ f8 ) f8 ~ ] | % 38
-    f4. es4 es8 s4 \break | % 39
-    f4 bes8 f4 es8 ( | \barNumberCheck #40
-    e4. ) g8 [ g32 [ g8 ] s32*11 | % 41
-    c,8 f4 b4. \rest | % 42
-    es,8 \> \! f4 \> \! b4. \rest s4*5 | % 44
-    c,8 f4 \> \! ~ f4. | % 45
-    es8 \> \! f4 \> \! ~ f4. s4 \break | % 46
-    es8 ^"133" es4 es4 c8 | % 47
-    f4 f8 bes8 [ bes8 bes8 \fp ~ ] | % 48
+    f4. es4 es8 | % 39
+    f4 bes8 f4 es8~ | \barNumberCheck #134
+    es4. g8 [ g g ] | % 41
+    c,8-> f4-> b4. \rest | % 42
+    es,8-> f4-> b4. \rest | % 44
+    R2. * 2 |
+    \mark #139
+    c,8-> f4-> ~ f4. | % 45
+    es8-> f4-> ~ f4. | % 46
+    es8 es4 es4 c8 | % 47
+    f4 f8 bes8 [ bes8 bes8-> \fp ~ ] | % 48
     bes2. \< ~ | % 49
-    bes2. \! s4*5 | % 51
-    g8 \ff \ff [ es8 g8 ] b8 \rest g4 f'2.. \rest es,4 \break | % 52
-    g4. g4 ( es4 \> \! ) g4 \> \! | % 53
-    r2. | % 54
-    es4 \f \< es8 es4 ( g4 ) g4 \! | % 55
-    a8 \ff a4 c,8 \> \! g'4 ~ | % 56
+    bes2. | % 51
+    R2. * 2 \! |
+    g8 \ff [ es8 g8 ] b8 \rest g8 [ es ] | % 52
+    g4. g8-> [ es-> g-> ] | % 53
+    R2. | % 54
+    es4 \f \< es8 es8 ( [ g ) g ] \! | % 55
+    a8-> \ff a4-> c,8-> g'4 ~ | % 56
     g2. | % 57
-    g4 ( g4 \> \! a4 ) b4. \rest \bar "||"
+    g8 [ g-> a-> ] b4. \rest \bar "||"
   }
+}
 }
