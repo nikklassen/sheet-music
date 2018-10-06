@@ -29,6 +29,8 @@
     \set Score.markFormatter = #format-mark-box-numbers
 
   \relative c'' {
+    \set midiInstrument = #"trumpet"
+    
     \tempo "Funky shuffle" 4. = 116
     \clef "treble" \key f \major \time 6/8 | % 1
     c4 \mf c8 c8 ( [ a8 ) a8 ~ ] | % 2
@@ -89,10 +91,8 @@
     \override Score.MetronomeMark.padding = #3
     \tempo "Lotsa energy!" 4. = 140
     R2. * 11 \pageBreak |
-  }
 
-   \relative es' {
-    es4 \f es4 g4 | % 2
+    es,4 \f es4 g4 | % 2
     \mark #74
     a8 [ a8 f8 ] es4. | % 3
     g4 es8 es4 es8 | % 4
@@ -170,6 +170,7 @@
     g2. | % 57
     g8-> [ g-> a-> ] b4. \rest \bar "||"
   }
+  }
+
+  \midi{}
 }
-}
- \midi{}
