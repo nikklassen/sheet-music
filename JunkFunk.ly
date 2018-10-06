@@ -3,7 +3,7 @@
 \header {
   title = "Junk Funk Shuffle (for Drums, Trash Cans, Buckets and Band)"
   composer = "KEVIN MIXON"
-  poet = \markup { "Trumpet 3 in " \char ##x266D }
+  poet = \markup { "Trumpet 3 in" \char ##x266D }
   }
 
 #(set-global-staff-size 18.3084948425)
@@ -156,7 +156,7 @@
     f4 f8 bes8 [ bes8 bes8 \fp ~ ] | % 48
     bes2. \< ~ | % 49
     bes2. \! s4*5 | % 51
-    g8 \ff \ff [ es8 g8 ^"140>" ] b8 \rest g4 f'2.. \rest es,4 \break | % 52
+    g8 \ff \ff [ es8 g8 ] b8 \rest g4 f'2.. \rest es,4 \break | % 52
     g4. g4 ( es4 \> \! ) g4 \> \! | % 53
     r2. | % 54
     es4 \f \< es8 es4 ( g4 ) g4 \! | % 55
