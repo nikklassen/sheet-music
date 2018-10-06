@@ -3,7 +3,7 @@
 \header {
   title = "Junk Funk Shuffle (for Drums, Trash Cans, Buckets and Band)"
   composer = "KEVIN MIXON"
-  poet = "Trumpet 3 in B♭"
+  poet = "Trumpet 3 in Bâ­"
   }
 
 #(set-global-staff-size 18.3084948425)
@@ -113,19 +113,24 @@
     g8-> g4-> es8-> es4-> | % 18
     \mark #90
     g8-> [ g8-> a8-> ] b4. \rest | % 22
-    {
-      \override MultiMeasureRest.minimum-length = #12
-      R2. * 3 | % 24
-    }
+
+    \override MultiMeasureRest.minimum-length = #12
+    R2. * 3 | % 24
+
     \mark #94
     \xNotesOn
     f4^\markup { \center-align \teeny "Foot Stomp" }^\markup { "Like ya mean it!" } \f f8 e'4.^\markup { \teeny "Hand Clap" } |
-    e4 e4 bes4^"Shout"_"Hey!" |
-    b4. \rest bes8 \mf ^"Ah!" [ bes8 \< g8 \! ] | % 29
+    e4 e4 bes4^\markup{ \teeny "Shout" }_"Hey!" |
+    f4 f8 e4. |
+    e4 e4 bes4_"Hey!" |
+    f4. e4. |
+    bes2._"Ah!" \sfz \< |
+    \mark #100
+    <f bes>4._"Hey!" \ff \! r4. |
     a4 \f ^"Hey!" a8 ^"Bring it home!" a8 ( [ f8 ) f8 ~ ] | \barNumberCheck #98
     f4. ^"101-107" es4 es8 | % 31
     d4 f8 ^"108-109" d4 es8 ^"110" ( | % 32
-    e4. ) g8 ^"Sh!" [ g8 bes8 ] s4 \break | % 33
+    e4. ) g8 ^"Sh!" [ g8 bes8 ] | % 33
     a4 a8 es4 es8 | % 34
     f4 f8 as4 c8 | % 35
     g16 [ g8 ] d8 ~ d4. s16*5 | % 36
