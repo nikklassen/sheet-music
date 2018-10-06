@@ -1,13 +1,9 @@
 \version "2.18.2"
 
 \header {
-  worknumber = "(for Drums, Trash Cans, Buckets and Band)"
-  encodingdate = "2018-10-04"
-  title = "[Audiveris detected movement]"
-  encodingsoftware = "Audiveris 5.1.0"
-  source = "C:\Users\Nik\Programming\Python\moonlight\music\junkfunk01_modified.png"
+  title = "Junk Funk Shuffle (for Drums, Trash Cans, Buckets and Band)"
   composer = "KEVIN MIXON"
-  poet = "Trumpet 3 in B1;"
+  poet = "Trumpet 3 in B♭"
   }
 
 #(set-global-staff-size 18.3084948425)
@@ -27,93 +23,124 @@
     }
   }
 
+{
+    \compressFullBarRests
+    \override MultiMeasureRest.expand-limit = #2
+    % \override Score.BarNumber.stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
+    \set Score.markFormatter = #format-mark-box-numbers
+
   \relative c'' {
+      \tempo "Funky shuffle" 4. = 116
     \clef "treble" \key f \major \time 6/8 | % 1
-    c4 -"" \mf ^\markup{ \bold {Funky shuffle(J.=ll6)} } c8 c8 ( [ a8 ) a8
-    ~ ] | % 2
+    c4 \mf c8 c8 ( [ a8 ) a8 ~ ] | % 2
     a2. | % 3
     es2. | % 4
     es8 \< [ es8 es8 ] g8 [ g8 g8 \! ] | % 5
-    a4 \f b8 \rest b4. \rest \break | % 6
+    \mark #5
+    a4-- \f b8 \rest b4. \rest \break | % 6
+    R2.*6 |
     es,4 \mf es8 \< es8 [ es8 g8 \! ] | % 7
-    a4 a8 a8 ( [ f8 ) f8 ~ ] | % 8
+    \mark #13
+    a4 \f a8 a8 ( [ f8 ) f8 ~ ] | % 8
     f4. es4 es8 | % 9
-    d4 f8 d4 es8 ( | \barNumberCheck #10
-    e4. ) g8 [ g8 bes8 ^\markup{ \bold\italic {f} } ] | % 11
+    d4 f8 d4 es8 ( | \barNumberCheck #16
+    e4. ) g8 [ g8 bes8 ] | % 11
     a4 a8 es4 es8 | % 12
-    f4 f8 ^\markup{ \bold {5-11} } as4 c8 \break | % 13
+    f4 f8 as4 c8 \break | % 13
     g8 [ g8 d8 ~ ] d4. | % 14
     b'4. \rest g4 bes8 | % 15
+    \mark #21
     a4 a8 a8 ( [ f8 ) f8 ~ ] | % 16
     f4. es4 es8 | % 17
     f4 bes8 f4 es8 ( | % 18
     e4. ) g8 [ g8 g8 ] | % 19
-    c,8 f4 b4. \rest \break | \barNumberCheck #20
-    es,8 f4 b4. \rest | % 21
+    c,8-> f4-> b4. \rest \break | \barNumberCheck #26
+    es,8-> f4-> b4. \rest | % 21
     es,8 es4 es4 c8 | % 22
     f4 f8 bes8 [ bes8 bes8 ] | % 23
-    a2 \< \fp s4 | % 24
-    a2. \! | % 25
-    g8 \f [ g8 a8 ] b4. \rest s2. \break | % 27
-    es,4 \mf ^\markup{ \bold {26>} } es8 \< es8 [ es8 \! g8 ] | % 28
-    a4 \f a8 a8 ( [ f8 ) f8 ~ ] | % 29
-    f4. es4 es8 | \barNumberCheck #30
-    d4 f4 d4 es8 ( | % 31
-    e4. ) <g g>8 [ bes8 ] | % 32
-    a4 a8 es4 ^\markup{ \bold {32-38} } es8 | % 33
-    f4 f8 as4 ^\markup{ \bold {39-41} } c8 \break | % 34
-    \key c \major es,8 f4 b4. \rest | % 35
+    a2.->~ \< \fp | % 24
+    a2. | % 25
+    \mark #31
+    g8-> \! \f [ g8-> a8-> ] b4. \rest | % 27
+    R2. * 7 |
+    \mark #39
+    R2. * 3 |
+    es,4 \mf es8 \< es8 [ es8 g8 ] | % 28
+    a4 \! \f a8 a8 ( [ f8 ) f8 ~ ] | % 29
+    f4. es4 es8 | \barNumberCheck #45
+    d4 f8 d4 es8~ | % 31
+    ees4. [ g8 g bes ] | % 32
+    a4 a8 es4 es8 | % 33
+    f4 f8 as4 c8 | % 34
+    g8~ [ g8 d8~ ] d4. |
+    r4. g4 bes8 |
+    a4 a8 a8 ( [ f8 ) f8~ ] |
+    f4. ees4 ees8 |
+    \mark #53
+    f4 bes8 f4 ees8~ |
+    ees4. g8 [ g g ] |
+    c,8-> f4-> r4. |
+    es8-> f4-> b4. \rest | % 35
     es,8 es4 es4 c8 | % 36
-    f4 f4 b8 [ b8 b8 ^\markup{ \bold\italic {-} } ] | % 37
-    a2. \< \! | % 38
-    <a a>8 \ff s8 c,8 g'4 | % 39
-    g8 [ g8 a8 ] b4. \rest ^\fermata | \barNumberCheck #40
-    g'1 ^\markup{ \bold {Lotsa energy! = 140)}
+    f4 f8 bes8 [ bes8 bes8 ] | % 37
+    a2.-> \< \! | % 38
+    a8-> \ff a4-> c,8-> g'4-> | % 39
+    g8-> [ g8-> a8-> ] b4. \rest ^\fermata | \barNumberCheck #62
+    \mark #62
+    \override Score.MetronomeMark.padding = #3
+    \tempo "Lotsa energy!" 4. = 140
+    R2. * 11 \pageBreak |
   }
 
    \relative es' {
-    es4 -"" \f es4 g4 s4 | % 2
-    a8 [ a8 f8 ] es4. s4 | % 3
-    g4 es8 es4 es8 s4 | % 4
-    f8 [ f8 f8 ] es4. s4 | % 5
-    as8 b8 \rest b8 \rest bes8 b8 \rest b8 \rest s4 | % 6
-    a8 [ a8 f8 ] es4. s4 | % 7
-    g4. es4 es8 s4 \break | % 8
-    f8 [ f8 f8 ~ ] f4. s4 | % 9
-    g4 g4 bes4 s4 | \barNumberCheck #10
-    a8 ( [ g8 ) a8 ] a4. s4 | % 11
-    es4. es4 es8 s4 | % 12
-    f4 f8 f4 f8 ~ s4 | % 13
-    f4. f4 f8 s4 | % 14
-    es2. \< \fp ( s4 | % 15
-    e2. \! ) ( s4 \break | % 16
-    e8 \ff ) b'8 \rest b8 \rest b4. \rest s4 | % 17
-    g8 g4 es8 es4 \> \! s4 | % 18
-    g8 \> \! [ g8 \> \! a8 ] b4. \rest s4*13 \break | % 22
-    e1 ^">>" s1 | % 24
-    b4. \rest s8*21 | % 27
-    b4. \rest b8 \rest b8 \rest ^\fermata s4. \break | % 28
-    b4. \rest bes8 \mf ^"Ah!" [ bes8 \< g8 \! ] s4 | % 29
-    a4 \f ^"Hey!" a8 ^\markup{ \bold {Bring it} } a8 ( [ f8 ^\markup{ \bold
-        {home!} } ) f8 ~ ] s4 | \barNumberCheck #30
-    f4. ^"101-107" es4 es8 s4 | % 31
-    d4 f8 ^"108-109" d4 es8 ^"110" ( s4 | % 32
+    es4 \f es4 g4 | % 2
+    \mark #74
+    a8 [ a8 f8 ] es4. | % 3
+    g4 es8 es4 es8 | % 4
+    f8 [ f8 f8 ] es4. | % 5
+    as8-> b8 \rest b8 \rest bes8-> b8 \rest b8 \rest | % 6
+    a8 [ a8 f8 ] es4. | % 7
+    g4. es4 es8 | % 8
+    f8 [ f8 f8 ~ ] f4. | % 9
+    g4 g4 bes4 | \barNumberCheck #82
+    a8 ( [ g8 ) a8 ] a4. | % 11
+    es4. es4 es8 | % 12
+    f4 f8 f4 f8 ~ | % 13
+    f4. f4 f8 | % 14
+    es2.~ -> \< \fp | % 15
+    es2.~ | % 16
+    es8 \! \ff b'8 \rest b8 \rest b4. \rest | % 17
+    g8-> g4-> es8-> es4-> | % 18
+    \mark #90
+    g8-> [ g8-> a8-> ] b4. \rest | % 22
+    {
+      \override MultiMeasureRest.minimum-length = #12
+      R2. * 3 | % 24
+    }
+    \mark #94
+    \xNotesOn
+    f4^\markup { \center-align \teeny "Foot Stomp" }^\markup { "Like ya mean it!" } \f f8 e'4.^\markup { \teeny "Hand Clap" } |
+    e4 e4 bes4^"Shout"_"Hey!" |
+    b4. \rest bes8 \mf ^"Ah!" [ bes8 \< g8 \! ] | % 29
+    a4 \f ^"Hey!" a8 ^"Bring it home!" a8 ( [ f8 ) f8 ~ ] | \barNumberCheck #98
+    f4. ^"101-107" es4 es8 | % 31
+    d4 f8 ^"108-109" d4 es8 ^"110" ( | % 32
     e4. ) g8 ^"Sh!" [ g8 bes8 ] s4 \break | % 33
-    a4 a8 es4 es8 s4 | % 34
-    f4 f8 as4 c8 s4 | % 35
+    a4 a8 es4 es8 | % 34
+    f4 f8 as4 c8 | % 35
     g16 [ g8 ] d8 ~ d4. s16*5 | % 36
-    b'4. \rest g4 bes8 s4 | % 37
-    a4 ^"125" a8 a8 ( [ f8 ) f8 ~ ] s4 | % 38
+    b'4. \rest g4 bes8 | % 37
+    a4 ^"125" a8 a8 ( [ f8 ) f8 ~ ] | % 38
     f4. es4 es8 s4 \break | % 39
-    f4 ^"127" bes8 f4 es8 ( s4 | \barNumberCheck #40
+    f4 ^"127" bes8 f4 es8 ( | \barNumberCheck #40
     e4. ) g8 [ g32 [ g8 ] s32*11 | % 41
-    c,8 ^"129" f4 b4. \rest s4 | % 42
+    c,8 ^"129" f4 b4. \rest | % 42
     es,8 \> \! f4 ^"130" \> \! b4. \rest s4*5 | % 44
-    c,8 f4 \> \! ~ f4. s4 | % 45
+    c,8 f4 \> \! ~ f4. | % 45
     es8 \> \! f4 \> \! ~ f4. s4 \break | % 46
-    es8 ^"133" es4 es4 c8 ^"134" s4 | % 47
-    f4 f8 bes8 [ bes8 ^"135>" bes8 \fp ~ ] s4 | % 48
-    bes2. \< ~ s4 | % 49
+    es8 ^"133" es4 es4 c8 ^"134" | % 47
+    f4 f8 bes8 [ bes8 ^"135>" bes8 \fp ~ ] | % 48
+    bes2. \< ~ | % 49
     bes2. \! s4*5 | % 51
     g8 \ff \ff [ es8 g8 ^"140>" ] b8 \rest g4 f'2.. \rest es,4 \break | % 52
     g4. ^"141" g4 ( es4 \> \! ) g4 \> \! | % 53
@@ -123,4 +150,5 @@
     g2. | % 57
     g4 ( g4 \> \! a4 ) b4. \rest \bar "||"
   }
+}
 }
