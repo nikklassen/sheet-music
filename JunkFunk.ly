@@ -3,7 +3,7 @@
 \header {
   title = "Junk Funk Shuffle (for Drums, Trash Cans, Buckets and Band)"
   composer = "KEVIN MIXON"
-  poet = "Trumpet 3 in Bâ­"
+  poet = "Trumpet 3 in B♭­"
   }
 
 #(set-global-staff-size 18.3084948425)
@@ -23,14 +23,14 @@
     }
   }
 
-{
+  \new Voice {
     \compressFullBarRests
     \override MultiMeasureRest.expand-limit = #2
     % \override Score.BarNumber.stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
     \set Score.markFormatter = #format-mark-box-numbers
 
   \relative c'' {
-      \tempo "Funky shuffle" 4. = 116
+    \tempo "Funky shuffle" 4. = 116
     \clef "treble" \key f \major \time 6/8 | % 1
     c4 \mf c8 c8 ( [ a8 ) a8 ~ ] | % 2
     a2. | % 3
@@ -121,39 +121,48 @@
     \xNotesOn
     f4^\markup { \center-align \teeny "Foot Stomp" }^\markup { "Like ya mean it!" } \f f8 e'4.^\markup { \teeny "Hand Clap" } |
     e4 e4 bes4^\markup{ \teeny "Shout" }_"Hey!" |
-    f4 f8 e4. |
+    f4 f8 e'4. |
     e4 e4 bes4_"Hey!" |
-    f4. e4. |
+    f4. e'4. |
+    \dynamicUp
     bes2._"Ah!" \sfz \< |
     \mark #100
     <f bes>4._"Hey!" \ff \! r4. |
-    a4 \f ^"Hey!" a8 ^"Bring it home!" a8 ( [ f8 ) f8 ~ ] | \barNumberCheck #98
-    f4. ^"101-107" es4 es8 | % 31
-    d4 f8 ^"108-109" d4 es8 ^"110" ( | % 32
-    e4. ) g8 ^"Sh!" [ g8 bes8 ] | % 33
+    R2. * 7 |
+    R2. * 2 ^\markup { \italic "molto rit." } |
+    r4. bes8_"Sh!" \ff r8 r8 \fermata |
+    \xNotesOff
+    \mark #111
+    \tempo "Funky shuffle (Tempo primo)" 4. = 116
+    R2. * 11 |
+    r4. bes8 \mf \< [ bes8 g8 ] |
+    \mark #123
+    a4^"Bring it home!" \f \! a8 a8 ( [ f8 ) f8 ~ ] | \barNumberCheck #124
+    f4. es4 es8 | % 31
+    d4 f8 d4 es8~ | % 32
+    es4. g8 [ g8 bes8 ] | % 33
     a4 a8 es4 es8 | % 34
     f4 f8 as4 c8 | % 35
-    g16 [ g8 ] d8 ~ d4. s16*5 | % 36
+    g16 [ g8 ] d8 ~ d4. | % 36
     b'4. \rest g4 bes8 | % 37
-    a4 ^"125" a8 a8 ( [ f8 ) f8 ~ ] | % 38
+    a4 a8 a8 ( [ f8 ) f8 ~ ] | % 38
     f4. es4 es8 s4 \break | % 39
-    f4 ^"127" bes8 f4 es8 ( | \barNumberCheck #40
+    f4 bes8 f4 es8 ( | \barNumberCheck #40
     e4. ) g8 [ g32 [ g8 ] s32*11 | % 41
-    c,8 ^"129" f4 b4. \rest | % 42
-    es,8 \> \! f4 ^"130" \> \! b4. \rest s4*5 | % 44
+    c,8 f4 b4. \rest | % 42
+    es,8 \> \! f4 \> \! b4. \rest s4*5 | % 44
     c,8 f4 \> \! ~ f4. | % 45
     es8 \> \! f4 \> \! ~ f4. s4 \break | % 46
-    es8 ^"133" es4 es4 c8 ^"134" | % 47
-    f4 f8 bes8 [ bes8 ^"135>" bes8 \fp ~ ] | % 48
+    es8 ^"133" es4 es4 c8 | % 47
+    f4 f8 bes8 [ bes8 bes8 \fp ~ ] | % 48
     bes2. \< ~ | % 49
     bes2. \! s4*5 | % 51
     g8 \ff \ff [ es8 g8 ^"140>" ] b8 \rest g4 f'2.. \rest es,4 \break | % 52
-    g4. ^"141" g4 ( es4 \> \! ) g4 \> \! | % 53
+    g4. g4 ( es4 \> \! ) g4 \> \! | % 53
     r2. | % 54
     es4 \f \< es8 es4 ( g4 ) g4 \! | % 55
     a8 \ff a4 c,8 \> \! g'4 ~ | % 56
     g2. | % 57
     g4 ( g4 \> \! a4 ) b4. \rest \bar "||"
   }
-}
 }
