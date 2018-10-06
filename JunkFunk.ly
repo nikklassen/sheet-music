@@ -3,7 +3,7 @@
 \header {
   title = "Junk Funk Shuffle (for Drums, Trash Cans, Buckets and Band)"
   composer = "KEVIN MIXON"
-  poet = \markup { "Trumpet 3 in" \char ##x266D }
+  poet = \markup { "Trumpet 3 in B" \flat }
   }
 
 #(set-global-staff-size 18.3084948425)
@@ -113,7 +113,7 @@
     \mark #90
     g8-> [ g8-> a8-> ] b4. \rest | % 22
 
-    \override MultiMeasureRest.minimum-length = #12
+    \once \override MultiMeasureRest.minimum-length = #12
     R2. * 3 | % 24
 
     \mark #94
@@ -127,10 +127,10 @@
     bes2._"Ah!" \sfz \< |
     \mark #100
     <f bes>4._"Hey!" \ff \! r4. |
-    \dynamicDown
     R2. * 7 |
     R2. * 2 ^\markup { \italic "molto rit." } |
     r4. bes8_"Sh!" \ff r8 r8 \fermata |
+    \dynamicDown
     \xNotesOff
     \mark #111
     \override Score.MetronomeMark.font-size = #-2
@@ -168,7 +168,7 @@
     es4 \f \< es8 es8 ( [ g ) g ] \! | % 55
     a8-> \ff a4-> c,8-> g'4 ~ | % 56
     g2. | % 57
-    g8 [ g-> a-> ] b4. \rest \bar "||"
+    g8-> [ g-> a-> ] b4. \rest \bar "||"
   }
 }
 }
