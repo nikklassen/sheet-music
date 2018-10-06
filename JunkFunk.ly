@@ -3,7 +3,7 @@
 \header {
   title = "Junk Funk Shuffle (for Drums, Trash Cans, Buckets and Band)"
   composer = "KEVIN MIXON"
-  poet = \markup { "Trumpet 3 in ­" \char ##x266D }
+  poet = \markup { "Trumpet 3 in " \char ##x266D }
   }
 
 #(set-global-staff-size 18.3084948425)
