@@ -24,12 +24,12 @@
   }
 
   \new Voice {
+    \set Staff.midiInstrument = #"trumpet"
     \compressFullBarRests
     \override MultiMeasureRest.expand-limit = #1
     \set Score.markFormatter = #format-mark-box-numbers
 
   \relative c'' {
-    \set midiInstrument = #"trumpet"
     
     \tempo "Funky shuffle" 4. = 116
     \clef "treble" \key f \major \time 6/8 | % 1
